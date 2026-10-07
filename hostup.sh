@@ -9,11 +9,15 @@ fi
 
 echo "[*] Waiting for $IP to come online..."
 
-until nmap -sn "$IP" 2>/dev/null | grep -q "Host is up"; do
+while true; do
+    if nmap -Pn --host-timeout 5s -p 22,80,443 "$IP" 2>/dev/null | grep -Eq '^[0-9]+/tcp +(open|closed)'; then
+        break 
+    fi
     sleep 2
 done
+    
 
 echo "[+] $IP is up."
 echo "[*] Running nmap -sC -sV..."
 
-nmap -sC -sV "$IP" >> init_nmap_scan.txt
+nmap -Pn -sC -sV "$IP" >> init_nmap_scan.txt
