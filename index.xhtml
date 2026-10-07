@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>hostUp</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: #0d1117;
+        color: #e6edf3;
+      }
+
+      .hero {
+        min-height: 50vh;
+        display: grid;
+        place-content: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 10vw, 6rem);
+        margin: 0;
+      }
+
+      .hero pre {
+        background: #161b22;
+        color: #0f0;
+        padding: 1rem 1.5rem;
+        border: 1px solid #30363d;
+        border-radius: 0.5rem;
+      }
+
+      .features {
+        max-width: 60rem;
+        margin: auto;
+        padding: 2rem;
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .features div {
+        padding: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 0.75rem;
+        border-color: #30363d;
+      }
+
+      .features h3 {
+        margin-top: 0;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        border-top: 1px solid #30363d;
+        color: #8b949e;
+      }
+
+      .footer a {
+        color: inherit;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: #0a0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <h1>hostUp</h1>
+      <p>The utility for the guys who are busy</p>
+      <pre><code>curl gethup.lol | bash -s [IP]</code></pre>
+    </header>
+    <section class="features">
+      <div>
+        <h3>Fast</h3>
+        <p>Checks hosts with a 2 second delay.</p>
+      </div>
+      <div>
+        <h3>Simple</h3>
+        <p>One script, no setup.</p>
+      </div>
+      <div>
+        <h3>Portable</h3>
+        <p>Runs anywhere with bash.</p>
+      </div>
+      <div>
+        <h3>Persistent</h3>
+        <p>Keeps going until host is live.</p>
+      </div>
+    </section>
+    <footer class="footer">
+      <a href="http://www.github.com/Br0mmie/gethup">GitHub</a> © 2026 gethup
+    </footer>
+  </body>
+</html>
